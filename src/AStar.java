@@ -26,7 +26,7 @@ public class AStar {
 	int colwidth = WW/cols;
 	int rowheight = WH/rows;
 	
-	point start = new point(); // h
+	point start = new point();
 	point goal = new point();
 	
 	ArrayList<ArrayList> xlist = new ArrayList<>();
@@ -151,7 +151,7 @@ public class AStar {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		Panel panel = new Panel() { // did this work?
+		Panel panel = new Panel() {
 			public void paint(Graphics g2) {
 				g.setColor(Color.GRAY);
 				g.fillRect(0, 0, WW, WH);
