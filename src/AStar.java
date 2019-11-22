@@ -50,9 +50,6 @@ public class AStar {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public AStar() {
 		initializeGrid();
 		initialize();
@@ -141,7 +138,11 @@ public class AStar {
 	}
 	
 	public void checkNeighbors(point check) {
-		
+		for (int i = 0; i<8; i++) {
+			if (check.x < 1 || check.x > cols-1 || check.y < 1 || check.y > rows-1) {
+				
+			}
+		}
 	}
 
 	private void initialize() {
