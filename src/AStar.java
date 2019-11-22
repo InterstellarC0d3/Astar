@@ -26,7 +26,7 @@ public class AStar {
 	int colwidth = WW/cols;
 	int rowheight = WH/rows;
 	
-	point start = new point();
+	point start = new point(); // h
 	point goal = new point();
 	
 	ArrayList<ArrayList> xlist = new ArrayList<>();
