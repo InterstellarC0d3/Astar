@@ -151,7 +151,7 @@ public class AStar {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		Panel panel = new Panel() {
+		Panel panel = new Panel() { // did this work?
 			public void paint(Graphics g2) {
 				g.setColor(Color.GRAY);
 				g.fillRect(0, 0, WW, WH);
