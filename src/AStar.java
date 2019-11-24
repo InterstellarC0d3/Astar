@@ -127,10 +127,10 @@ public class AStar {
 				g.setColor(Color.BLACK);
 				g.drawRect(x*colwidth, y*rowheight, colwidth, rowheight);
 				
-				g.drawString(Integer.toString(a.number), x*colwidth, (y+1)*rowheight-10);
+				g.drawString(Integer.toString(a.number), x*colwidth, (y+1)*rowheight-30);
 				
 				g.setColor(Color.ORANGE);
-				g.drawString(Integer.toString(a.h), x*colwidth, (y+1)*rowheight-1);
+				g.drawString(Integer.toString(a.h), x*colwidth, (y+1)*rowheight-20);
 				
 				
 			}
@@ -138,10 +138,8 @@ public class AStar {
 	}
 	
 	public void checkNeighbors(point check) {
-		for (int i = 0; i<8; i++) {
-			if (check.x < 1 || check.x > cols-1 || check.y < 1 || check.y > rows-1) {
-				
-			}
+		for (int i = 0; i < 8; i++) {
+			
 		}
 	}
 
