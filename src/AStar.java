@@ -76,6 +76,13 @@ public class AStar {
 			}
 			xlist.add(ylist);
 		}
+		
+		for (int x = 0; x < cols; x++) {
+			for (int y = 0; y < rows; y++) {
+
+				addneighbors((point) xlist.get(x).get(y));
+			}
+		}
 		//(point) xlist.get(x).get(y)
 	}
 	
@@ -138,18 +145,41 @@ public class AStar {
 	}
 	
 	public void checkNeighbors(point check) {
-		for (int i = 0; i < 8; i++) {
-			
-		}
+		
 	}
 	
-	public void addneighbors() {
-		
+	public void addneighbors(point check) {
+		if (check.x > 0 && check.x < cols-1 && check.y > 0 && check.y < rows-1) {
+			check.neighbors.add((point) xlist.get(check.x-1).get(check.y-1));
+			check.neighbors.add((point) xlist.get(check.x).get(check.y-1));
+			check.neighbors.add((point) xlist.get(check.x+1).get(check.y-1));
+			check.neighbors.add((point) xlist.get(check.x-1).get(check.y));
+			check.neighbors.add((point) xlist.get(check.x+1).get(check.y));
+			check.neighbors.add((point) xlist.get(check.x-1).get(check.y+1));
+			check.neighbors.add((point) xlist.get(check.x).get(check.y+1));
+			check.neighbors.add((point) xlist.get(check.x+1).get(check.y+1));
+		} else if (check.x == 0 && check.y == 0) {
+			check.neighbors.add((point) xlist.get(check.x+1).get(check.y));
+			check.neighbors.add((point) xlist.get(check.x).get(check.y+1));
+			check.neighbors.add((point) xlist.get(check.x+1).get(check.y+1));
+		} else if (check.x == cols && check.y == 0) {
+			check.neighbors.add((point) xlist.get(check.x-1).get(check.y));
+			check.neighbors.add((point) xlist.get(check.x-1).get(check.y+1));
+			check.neighbors.add((point) xlist.get(check.x).get(check.y+1));
+		} else if (check.x == 0 && check.y == rows) {
+			check.neighbors.add((point) xlist.get(check.x).get(check.y-1));
+			check.neighbors.add((point) xlist.get(check.x+1).get(check.y-1));
+			check.neighbors.add((point) xlist.get(check.x+1).get(check.y));
+		} else if (check.x == cols && check.y == rows) {
+			check.neighbors.add((point) xlist.get(check.x-1).get(check.y-1));
+			check.neighbors.add((point) xlist.get(check.x).get(check.y-1));
+			check.neighbors.add((point) xlist.get(check.x-1).get(check.y));
+		}
 	}
 
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(WX, WY, WW + 16, WH + 39);
+		frame.setBounds(WX, WY, WW, WH + 22);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
