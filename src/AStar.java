@@ -142,6 +142,10 @@ public class AStar {
 			
 		}
 	}
+	
+	public void addneighbors() {
+		
+	}
 
 	private void initialize() {
 		frame = new JFrame();

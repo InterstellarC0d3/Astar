@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class point {
 	
@@ -9,5 +10,6 @@ public class point {
 	int g;
 	int h;
 	int cost;
+	ArrayList<point> neighbors = new ArrayList<>();
 	point parent;
 }
