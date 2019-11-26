@@ -130,6 +130,10 @@ public class AStar {
 					g.setColor(Color.BLACK);
 					g.fillRect(x*colwidth+1, y*rowheight+1, colwidth-2, rowheight-2);
 				}
+				if (closedlist.contains(a)) {
+					g.setColor(Color.RED);
+					g.drawOval(x*colwidth+1, y*rowheight+1, colwidth-2, rowheight-2);
+				}
 				
 				g.setColor(Color.BLACK);
 				g.drawRect(x*colwidth, y*rowheight, colwidth, rowheight);
@@ -145,7 +149,12 @@ public class AStar {
 	}
 	
 	public void checkNeighbors(point check) {
-		
+		for (int i = 0; i < check.neighbors.size(); i++) {
+			point a = check.neighbors.get(i);
+			if (!openlist.contains(a)) {
+				openlist.add(a);
+			}
+		}
 	}
 	
 	public void addneighbors(point check) {
@@ -175,6 +184,18 @@ public class AStar {
 			check.neighbors.add((point) xlist.get(check.x).get(check.y-1));
 			check.neighbors.add((point) xlist.get(check.x-1).get(check.y));
 		}
+	}
+	
+	public void step() {
+		
+	}
+	
+	public point lowest() {
+		point lowest;
+		for (int i = 0; i < openlist.size(); i++) {
+			lowest = openlist.get(i);
+		}
+		return null;
 	}
 
 	private void initialize() {
