@@ -27,7 +27,7 @@ public class AstarButItsActuallyTheAlgorithm {
 				a.x = x;
 				a.y = y;
 				a.h = distance(a, goal);
-				//System.out.println(a.h);
+				System.out.println(a.h);
 				ylist.add(a);
 				
 			}
@@ -35,12 +35,16 @@ public class AstarButItsActuallyTheAlgorithm {
 		}
 	}
 	
-	public double distance(point a, point b) {
+	public int distance(point a, point b) {
+		int distance = 0;
 		
-		int x = b.x - a.x;
-		int y = b.y - b.y;
-		
-		double distance = Math.sqrt(x*x + y*y);
+		while (a.x != b.x) {
+			if (a.x < b.x) {
+				
+			} else if (a.x > b.x) {
+				
+			}
+		}
 		
 		return distance;
 	}
