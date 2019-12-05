@@ -6,9 +6,9 @@ public class point {
 	int number;
 	int x;
 	int y;
-	int f;
-	int g;
-	int h;
+	double f;
+	double g;
+	double h;
 	int cost;
 	ArrayList<point> neighbors = new ArrayList<>();
 	point parent;
